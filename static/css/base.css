@@ -17,7 +17,17 @@ body{
 }
 .rounded{
     display: inline-block;
-    
+
+}
+.pro-image{
+    height: 280px;
+    width: 280px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    left: 5.5rem;
+    top: 3rem;
+
 }
 .font-1{
     font-family: 'Sigmar One', cursive;

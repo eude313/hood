@@ -3,9 +3,59 @@
 {% block body %}
 
 <div class="container">
-    <div class="row">
-        <div class="col-md"></div>
-        <div class="col-md"></div>
+    <div class="row"  style="margin-bottom: 2rem;">
+        <div class="col-md-6">
+            <h1 class="mt-5">My Profile</h1>
+            <hr class="divider"/></li>
+            <div style="margin-top: -1rem;">
+                <form  style="height:auto; margin-top:4rem; font-family: 'Merienda', cursive;" class="border p-3 shadow">
+                    <div class="mb-3">
+                        <input type="email" name="username" class="form-control" placeholder="username" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" name="email" class="form-control" placeholder="Email address" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" name="password"  class="form-control" placeholder="Password"  id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" name="confirm_password"  class="form-control" placeholder="confirm_password"  id="exampleInputPassword1">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <div class="my-2">
+                        Have an Account? <a href="{% url 'signIn' %}"> Login</a> 
+                    </div>
+                </form>  
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div>
+                <img
+                src="https://mdbootstrap.com/img/new/standard/city/047.jpg"
+                class="img-fluid rounded-circle pro-image" 
+                alt=""/>
+            </div>
+            <div>
+                <form  style="height:auto; margin-top:4rem; font-family: 'Merienda', cursive;" class="border p-3 shadow">
+                    <div class="mb-3">
+                        <input type="email" name="username" class="form-control" placeholder="username" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" name="email" class="form-control" placeholder="Email address" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" name="password"  class="form-control" placeholder="Password"  id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" name="confirm_password"  class="form-control" placeholder="confirm_password"  id="exampleInputPassword1">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <div class="my-2">
+                        Have an Account? <a href="{% url 'signIn' %}"> Login</a> 
+                    </div>
+                </form>   
+            </div>
+        </div>
     </div>
 </div>
 
