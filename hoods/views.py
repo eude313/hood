@@ -44,3 +44,7 @@ def signIn(request):
 def signOut(request):
     logout(request)
     return redirect('signIn')
+
+
+def profile(request):
+    return render(request, 'hod/profile.html')
