@@ -20,14 +20,20 @@ body{
 
 }
 .pro-image{
-    height: 280px;
-    width: 280px;
+    height: 200px;
+    width: 200px;
     border-radius: 50%;
     display: inline-block;
     position: relative;
-    left: 5.5rem;
-    top: 3rem;
+    left:7.5rem;
+    top: 3.6rem;
+    transition: width 2s, height 2s;
+    margin-bottom: 1rem;
 
+}
+.pro-image:hover {
+    width: 220px;
+    height: 220px;
 }
 .font-1{
     font-family: 'Sigmar One', cursive;
