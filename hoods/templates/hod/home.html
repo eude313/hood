@@ -17,7 +17,37 @@
             <img src="{% static '/images/pic.png' %}" class="img-fluid dot" alt="">
         </div>
     </div>
+
+     <div class="row" style="margin-top:4rem">
+        <div class="col-md-8">
+            
+        </div>
+        <div class="col-md-4">
+            <form style="width:18rem; margin-top:2rem; font-family: 'Merienda', cursive;" class="border p-3 shadow">
+                <div class="mb-3">
+                    <input type="email" name="username" class="form-control" placeholder="Email address" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <input type="email" name="email" class="form-control" placeholder="Email address" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <input type="password" name="password"  class="form-control" placeholder="Password"  id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                    <input type="password" name="confirm_password"  class="form-control" placeholder="Password"  id="exampleInputPassword1">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="my-2">
+                    Have an Account? <a href="{% url 'signIn' %}"> Login</a> 
+                </div>
+            </form>
+        </div>
+    </div>
+
+
 </div>
+
+
 
 
 {% endblock %}
