@@ -1,0 +1,17 @@
+/* font-family: 'Caramel', cursive; {deco} 
+font-family: 'Merienda', cursive; {notes}
+font-family: 'Sigmar One', cursive;{head}*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+.dot {
+    height: 600px;
+    margin-left: 3rem;
+}

@@ -90,14 +90,10 @@ MODE=config("MODE", default="dev")
 if config('MODE')=="dev":
    DATABASES = {
        'default': {
-           'ENGINE': 'django.db.backends.postgresql_psycopg2',
-           'NAME': config('NAME'),
-           'USER': config('USER'),
-           'PASSWORD': config('PASSWORD'),
-           'HOST': config('HOST'),
-       }
-       
-   }
+           'ENGINE': 'django.db.backends.sqlite3',
+           'NAME' : os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 # production
 else:
    DATABASES = {

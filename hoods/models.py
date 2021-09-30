@@ -59,11 +59,31 @@ class Users(AbstractBaseUser):
     def has_module_perms(self, app_label):
         return True
   
+    class Meta:
+        verbose_name_plural='Users'
+
+
+    def save_user(self):
+        self.save()
+
+    @classmethod
+    def delete_user(cls,id):
+        delete_user = cls.objects.get(id=id)
+        delete_user.delete()
+        return delete_user
+    
+    @classmethod
+    def update_user(cls,id,profile_photo, phone_number,neighborhood, name):
+        user=cls.objects.get(id=id)
+        user.profile_photo=profile_photo
+        user.phone_number=phone_number
+        user.neighborhood=neighborhood
+        user.name=name
+        return user.save()
 
 
 
 class Hood(models.Model):
     name = models.CharField(max_length=100)
     location = models.CharField(max_length=150)
-#     Occupants Count
-# Admin Foreign key
+    occupant = models.IntegerField()
