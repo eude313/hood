@@ -15,3 +15,17 @@ body{
     height: 600px;
     margin-left: 3rem;
 }
+.rounded{
+    display: inline-block;
+    
+}
+.font-1{
+    font-family: 'Sigmar One', cursive;
+    font-size: 2vw;
+}
+.font-2{
+    font-family: 'Merienda', cursive;
+}
+.font-3{
+    font-family: 'Caramel', cursive; 
+}

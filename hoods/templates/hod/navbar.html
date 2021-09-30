@@ -1,7 +1,7 @@
 {% load static %}
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'signIn' %}">Bazenga hood</a>
+        <a class="navbar-brand font-1" href="{% url 'signIn' %}">Bazenga hood</a>
         <button 
         class="navbar-toggler" 
         type="button" 
@@ -15,7 +15,7 @@
         <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
 
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 font-2" style="font-size:1vw">
             <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
             </li>
@@ -26,10 +26,10 @@
             <a class="nav-link" href="#">Pricing</a>
             </li>
         </ul>
-        <ul class="navbar-nav mb-2 mb-lg-0">
+        <ul class="navbar-nav mb-2 mb-lg-0  font-2">
             <li class="nav-item dropdown">
             <a class="nav-link " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Action <img src="{% static '/images/carbon.png' %}" height="40" width="40" class="rounded" alt="...">
+                Action <img src="{% static '/images/carbon.png' %}" height="40" width="40" class="rounded-circle" alt="...">
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="#">Action</a></li>
