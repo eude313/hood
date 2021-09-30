@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
 import datetime as dt
+from cloudinary.models import CloudinaryField
 # from cloudinary.models import CloudinaryField
 # Create your models here.
 
@@ -43,7 +44,13 @@ class Users(AbstractBaseUser):
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
-    password = models.CharField( max_length=100)
+    password = models.CharField( max_length=120)
+    profile_photo = CloudinaryField('image', default='image/upload/v1631717620/default_uomrne.jpg') 
+    email = models.CharField( max_length=100, unique=True)
+    about = models.TextField(null=True)
+    id_number = models.IntegerField(null=True)
+    phone_number = models.CharField(max_length = 15,blank =True)
+    hood=models.ForeignKey("Hood",on_delete=models.CASCADE,null=True)
     
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = [ 'username']
@@ -73,11 +80,11 @@ class Users(AbstractBaseUser):
         return delete_user
     
     @classmethod
-    def update_user(cls,id,profile_photo, phone_number,neighborhood, name):
+    def update_user(cls,id,profile_photo, phone_number,hood, name):
         user=cls.objects.get(id=id)
         user.profile_photo=profile_photo
         user.phone_number=phone_number
-        user.neighborhood=neighborhood
+        user.hood=hood
         user.name=name
         return user.save()
 
@@ -87,3 +94,136 @@ class Hood(models.Model):
     name = models.CharField(max_length=100)
     location = models.CharField(max_length=150)
     occupant = models.IntegerField()
+
+    def __str__(self):
+        return self.name 
+
+    def create_hood(self):
+        self.save()
+
+    @classmethod
+    def update_occupant(cls, id, occupant):
+        hood=cls.objects.get(id=id)
+        hood.occupant=occupant
+        return hood.save()
+
+    @classmethod
+    def delete_hood(cls):
+        delete_post = cls.objects.get(id=id)
+        delete_post.delete()
+        return delete_post
+
+    @classmethod
+    def update_hood(cls,id, name):
+        hood=cls.objects.get(id=id)
+        hood.name=name
+        return hood.save()
+
+class Health(models.Model):
+    name = models.CharField(max_length =200, blank=True, default="health")
+    contact = models.CharField(max_length =200)
+    hood=models.ForeignKey("Hood",on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name 
+
+    class Meta:
+        verbose_name_plural='Health'
+        
+    def create_health(self):
+        self.save()
+
+    @classmethod
+    def update_health(cls,id,contact):
+        health=cls.objects.get(id=id)
+        health.contact=contact
+        return health.save()
+
+    @classmethod
+    def delete_health(cls,id):
+        delete_health = cls.objects.get(id=id)
+        delete_health.delete()
+        return delete_health
+    
+class Police(models.Model):
+    name = models.CharField(max_length =200, blank=True)
+    contact = models.CharField(max_length =200)
+    hood=models.ForeignKey("hood",on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name 
+
+    class Meta:
+        verbose_name_plural='Police'
+
+    def create_police(self):
+        self.save()
+
+    @classmethod
+    def delete_police(cls,id):
+        delete_police = cls.objects.get(id=id)
+        delete_police.delete()
+        return delete_police
+   
+class Business(models.Model):
+    name = models.CharField(max_length =200)
+    business_mail=models.CharField(max_length =200)
+    hood=models.ForeignKey("Hood",on_delete=models.CASCADE)
+    admin=models.ForeignKey("Users",on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.name 
+
+    class Meta:
+        verbose_name_plural='Businesses'
+    
+    def create_business(self):
+        self.save()
+        
+    @classmethod
+    def find_business(cls,business_id):
+        hood=cls.objects.filter(id=business_id).count()
+        return hood
+
+    @classmethod
+    def delete_business(cls,id):
+        delete_business = cls.objects.get(id=id)
+        delete_business.delete()
+        return delete_business
+    
+    @classmethod
+    def update_business(cls,id,name, business_mail):
+        business=cls.objects.get(id=id)
+        business.name=name
+        business.business_mail=business_mail
+        return business.save()
+    
+
+class Post(models.Model):
+    title = models.CharField(max_length =200)
+    date_posted = models.DateTimeField(verbose_name='date joined', auto_now_add=True)
+    content= models.TextField()
+    image = CloudinaryField('image') 
+    user=models.ForeignKey("Users",on_delete=models.CASCADE)
+    hood=models.ForeignKey("Hood",on_delete=models.CASCADE)
+
+    def _str_(self):
+        return self.title
+    
+    def save_post(self):
+        self.save()
+
+    @classmethod
+    def update_post(cls,id,title, content,image):
+        post=cls.objects.get(id=id)
+        post.title=title
+        post.content=content
+        post.image=image
+        return post.save()
+
+    @classmethod
+    def delete_post(cls,id):
+        delete_post = cls.objects.get(id=id)
+        delete_post.delete()
+        return delete_post
+ 
