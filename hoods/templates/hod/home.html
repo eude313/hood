@@ -25,21 +25,17 @@
         <div class="col-md-4">
             <form style="width:18rem; margin-top:2rem; font-family: 'Merienda', cursive;" class="border p-3 shadow">
                 <div class="mb-3">
-                    <input type="email" name="username" class="form-control" placeholder="Email address" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="email" name="title" class="form-control" placeholder="Title address" id="exampleInputEmail1">
                 </div>
                 <div class="mb-3">
-                    <input type="email" name="email" class="form-control" placeholder="Email address" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <label class="form-label" for="customFile">upload image</label>
+                    <input type="file" class="form-control" id="customFile" />
                 </div>
-                <div class="mb-3">
-                    <input type="password" name="password"  class="form-control" placeholder="Password"  id="exampleInputPassword1">
-                </div>
-                <div class="mb-3">
-                    <input type="password" name="confirm_password"  class="form-control" placeholder="Password"  id="exampleInputPassword1">
+                <div class="form-outline mb-3">
+                    <textarea class="form-control" id="textAreaExample" rows="4"></textarea>
+                    <label class="form-label" for="textAreaExample">Message</label>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
-                <div class="my-2">
-                    Have an Account? <a href="{% url 'signIn' %}"> Login</a> 
-                </div>
             </form>
         </div>
     </div>

@@ -9,23 +9,23 @@
             <img src="{% static '/images/web-development-programmer-engineering-coding-website-augmented-reality-interface-screens-developer-project-engineer-programming-software-application-design-cartoon-illustration_107791-3863-removebg-p.png' %}" class="img-fluid mt-2" alt="">
         </div>
         <div class="col-md-6 ">
-            <form style="width:18rem; margin-top:2rem; font-family: 'Merienda', cursive;" class="border p-3 shadow">
-                 <!-- Name input -->
-                <div class="form-outline mb-4">
-                    <input type="text" id="form5Example1" class="form-control" />
-                    <label class="form-label" for="form5Example1">Name</label>
-                </div> 
-                    <!-- file input -->
-                <div class="mb-4">
-                    <label class="form-label" for="customFile">Default file input example</label>
-                    <input type="file" class="form-control" id="customFile" />
-                </div> 
-                  <!-- Message input -->
-                <div class="form-outline mb-4">
-                    <textarea class="form-control" id="form4Example3" rows="4"></textarea>
-                    <label class="form-label" for="form4Example3">Message</label>
+            <form  style="width:18rem; height:auto; margin-top:4rem; font-family: 'Merienda', cursive;" class="border p-3 shadow">
+                <div class="mb-3">
+                    <input type="email" name="username" class="form-control" placeholder="username" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <input type="email" name="email" class="form-control" placeholder="Email address" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <input type="password" name="password"  class="form-control" placeholder="Password"  id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                    <input type="password" name="confirm_password"  class="form-control" placeholder="confirm_password"  id="exampleInputPassword1">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="my-2">
+                    Have an Account? <a href="{% url 'signIn' %}"> Login</a> 
+                </div>
             </form>
         </div>
     </div>
