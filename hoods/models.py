@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
 import datetime as dt
 from cloudinary.models import CloudinaryField
-# from cloudinary.models import CloudinaryField
 # Create your models here.
 
 
@@ -46,7 +45,6 @@ class Users(AbstractBaseUser):
     is_superuser = models.BooleanField(default=False)
     password = models.CharField( max_length=120)
     profile_photo = CloudinaryField('image', default='image/upload/v1631717620/default_uomrne.jpg') 
-    email = models.CharField( max_length=100, unique=True)
     about = models.TextField(null=True)
     id_number = models.IntegerField(null=True)
     phone_number = models.CharField(max_length = 15,blank =True)
@@ -69,7 +67,6 @@ class Users(AbstractBaseUser):
     class Meta:
         verbose_name_plural='Users'
 
-
     def save_user(self):
         self.save()
 
@@ -87,7 +84,6 @@ class Users(AbstractBaseUser):
         user.hood=hood
         user.name=name
         return user.save()
-
 
 
 class Hood(models.Model):
@@ -119,6 +115,7 @@ class Hood(models.Model):
         hood.name=name
         return hood.save()
 
+
 class Health(models.Model):
     name = models.CharField(max_length =200, blank=True, default="health")
     contact = models.CharField(max_length =200)
@@ -145,6 +142,7 @@ class Health(models.Model):
         delete_health.delete()
         return delete_health
     
+
 class Police(models.Model):
     name = models.CharField(max_length =200, blank=True)
     contact = models.CharField(max_length =200)
@@ -165,6 +163,7 @@ class Police(models.Model):
         delete_police.delete()
         return delete_police
    
+
 class Business(models.Model):
     name = models.CharField(max_length =200)
     business_mail=models.CharField(max_length =200)
