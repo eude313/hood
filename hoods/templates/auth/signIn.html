@@ -10,13 +10,13 @@
         <div class="col-md-6 ">
             <form style="width:18rem; height:auto; margin-top:4rem; font-family: 'Merienda', cursive;" class="border p-3 shadow">
                 {% if messages %}
-                <div class="messages me-5">
+                <div class="messages pt-2 pb-3" style="font-size:1.54rem;">
                     {% for message in messages %}
-                    <h4 {% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</h4>
+                    <small {% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</small>
                     {% endfor %}
                 </div>
                 {% endif %}
-                <div class="mb-3 mt-4">
+                <div class="mb-3 mt-2">
                     <input type="email" name="email" class="form-control" placeholder="Email address" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">

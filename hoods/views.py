@@ -43,8 +43,10 @@ def signIn(request):
 
 def signOut(request):
     logout(request)
+    messages.add_message(request, messages.SUCCESS, "logg Out successfull!")
     return redirect('signIn')
 
 
 def profile(request):
+    
     return render(request, 'hod/profile.html')
