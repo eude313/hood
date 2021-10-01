@@ -24,11 +24,11 @@ body{
     width: 200px;
     border-radius: 50%;
     display: inline-block;
-    position: relative;
+    /* position: relative;
     left:7.5rem;
-    top: 3.6rem;
+    top: 3rem; */
     transition: width 2s, height 2s;
-    margin-bottom: 1rem;
+    margin-top: 3rem;
 
 }
 .pro-image:hover {
@@ -37,7 +37,7 @@ body{
 }
 .font-1{
     font-family: 'Sigmar One', cursive;
-    font-size: 2vw;
+    font-size: 1.6rem;
 }
 .font-2{
     font-family: 'Merienda', cursive;

@@ -3,42 +3,51 @@
     <div class="container-fluid">
         <a class="navbar-brand font-1" href="{% url 'signIn' %}">Bazenga hood</a>
         <button 
-        class="navbar-toggler" 
-        type="button" 
-        data-bs-toggle="collapse" 
-        data-bs-target="#navbarText" 
-        aria-controls="navbarText" 
-        aria-expanded="false" 
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
         aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <i class="fas fa-bars"></i> 
         </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+        <div  class="collapse navbar-collapse"  id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
 
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 font-2" style="font-size:1vw">
-            <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-            </li>
-        </ul>
-        <ul class="navbar-nav mb-2 mb-lg-0  font-2">
-            <li class="nav-item dropdown">
-            <a class="nav-link " href=" {% url 'profile' %} " id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Action <img src="{% static '/images/carbon.png' %}" height="40" width="40" class="rounded-circle" alt="...">
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 font-2">
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+                </li>
             </ul>
-            </li>
-        </ul>
+            <ul class="navbar-nav mb-2 mb-lg-0  font-2">
+                <li class="nav-item dropdown d-flex">
+                    <p class="nav-item mt-3" 
+                        id="navbarDropdownMenuLink"
+                        role="button"
+                        data-mdb-toggle="dropdown"
+                        aria-expanded="false"
+                    > Action</p>
+                    <a class="nav-link " href=" {% url 'profile' %}">
+                        <img src="{% static '/images/carbon.png' %}" height="40" width="40" class="rounded-circle" alt="...">
+                    </a>
+                    <ul  
+                    class="dropdown-menu dropdown-menu-end"
+                    aria-labelledby="navbarDropdownMenuLink"
+                    >
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'signOut' %}">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>
