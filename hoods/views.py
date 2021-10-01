@@ -9,17 +9,10 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def home(request):
-    if request.method == 'POST':
-        title= request.POST['title']
-        image= request.POST['image']
-        message = request.POST['message']
-        post = Post(title=title, image=image, message=message)
-        post.save()
-        return redirect('home')
     return render(request, 'hod/home.html')
 
 @login_required(login_url='/')
-def home(request, id):
+def home(request):
     post = Post.objects.get(id)
     context= {"post":post}
     return render(request,'hod/home.html', context)
@@ -69,3 +62,13 @@ def profile(request):
 def bussiness(request):
     
     return render(request, 'hod/bussiness.html')
+
+def post(request):
+    if request.method == 'POST':
+        title= request.POST['title']
+        image= request.POST['image']
+        message = request.POST['message']
+        post = Post(title=title, image=image, message=message)
+        post.save()
+        return redirect('home')
+    return render(request, 'hod/post.html')
