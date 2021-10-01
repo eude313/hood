@@ -48,3 +48,12 @@ body{
 .b2{
     height: 3.5rem;
 }
+.vl{
+    background-color: #c0c0c0;
+    height: 2px;
+    width: 10rem;
+    position: relative;
+    top: 24px;
+    left: 0;
+
+}
