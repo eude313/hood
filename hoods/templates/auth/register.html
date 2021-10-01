@@ -9,7 +9,11 @@
             <img src="{% static '/images/web-development-programmer-engineering-coding-website-augmented-reality-interface-screens-developer-project-engineer-programming-software-application-design-cartoon-illustration_107791-3863-removebg-p.png' %}" class="img-fluid mt-2" alt="">
         </div>
         <div class="col-md-6 ">
-            <form  style="width:18rem; height:auto; margin-top:4rem; font-family: 'Merienda', cursive;" class="border p-3 shadow">
+            <form method="POST" action="" style="width:18rem; height:auto; margin-top:4rem; font-family: 'Merienda', cursive;" class="border p-3 shadow">
+            {% csrf_token %}
+                <div class="my-3">
+                   <h1 class="text-center"> Register</h1>
+                </div>
                 <div class="mb-3">
                     <input type="text" name="username" class="form-control" placeholder="username">
                 </div>

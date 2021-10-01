@@ -32,8 +32,7 @@ def signIn(request):
         password = request.POST['password']
         user = authenticate(email=email, password=password)
         if user is not None:
-            login(request, user)
-            messages.add_message(request, messages.SUCCESS, "Successfully logged in!")
+            login(request,user)
             return redirect('home')
         else:
             messages.add_message(request, messages.ERROR, "invalid infomation!") 
