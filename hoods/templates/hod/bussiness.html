@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block body %}
-<h1 class="mt-3  mb-3 text-center">Top most jobs around</h1>
-<div id="carouselExampleCaptions" class="carousel slide mb-5" data-mdb-ride="carousel">
+<h1 class="mt-3  mb-4 text-center" style="font-family: 'Sigmar One', cursive;">Top most jobs around</h1>
+<div id="carouselExampleCaptions" class="carousel slide mb-5" style="font-family: 'Merienda', cursive;" data-mdb-ride="carousel">
   <div class="carousel-indicators">
     <button
       type="button"
@@ -100,7 +100,8 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-<div class="row">
+
+<div class="row fim"  style="font-family: 'Merienda', cursive;" >
   <div class="col">
         <!-- Name input -->
         <div class="form-outline">
@@ -122,5 +123,13 @@
             <label class="form-label" for="form8Example5">Email address</label>
         </div>
   </div>
+  <button
+        type="button"
+        class="btn btn-outline-info my-4 btn-rounded orm8"
+        data-mdb-ripple-color="dark"
+        >
+        submit
+    </button>
+
 </div>
 {% endblock %}

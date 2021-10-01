@@ -164,10 +164,9 @@ class Police(models.Model):
         delete_police.delete()
         return delete_police
    
-
 class Business(models.Model):
     name = models.CharField(max_length =200)
-    b-image = CloudinaryField('image')
+    bimage = CloudinaryField('image')
     business_mail=models.CharField(max_length =200)
     hood=models.ForeignKey("Hood",on_delete=models.CASCADE)
     admin=models.ForeignKey("Users",on_delete=models.CASCADE)
