@@ -50,3 +50,7 @@ def signOut(request):
 def profile(request):
     
     return render(request, 'hod/profile.html')
+
+def bussiness(request):
+    
+    return render(request, 'hod/bussiness.html')
