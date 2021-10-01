@@ -44,6 +44,7 @@ class Users(AbstractBaseUser):
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     password = models.CharField( max_length=120)
+    name = models.CharField(max_length=150) 
     profile_photo = CloudinaryField('image', default='image/upload/v1631717620/default_uomrne.jpg') 
     about = models.TextField(null=True)
     id_number = models.IntegerField(null=True)
@@ -201,7 +202,7 @@ class Business(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length =200)
     date_posted = models.DateTimeField(verbose_name='date joined', auto_now_add=True)
-    content= models.TextField()
+    message= models.TextField()
     image = CloudinaryField('image') 
     user=models.ForeignKey("Users",on_delete=models.CASCADE)
     hood=models.ForeignKey("Hood",on_delete=models.CASCADE)

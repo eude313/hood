@@ -9,8 +9,20 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def home(request):
+    if request.method == 'POST':
+        title= request.POST['title']
+        image= request.POST['image']
+        message = request.POST['message']
+        post = Post(title=title, image=image, message=message)
+        post.save()
+        return redirect('home')
     return render(request, 'hod/home.html')
 
+@login_required(login_url='/')
+def home(request, id):
+    post = Post.objects.get(id)
+    context= {"post":post}
+    return render(request,'hod/home.html', context)
 
 def register(request):
     if request.method == 'POST':
@@ -45,10 +57,14 @@ def signOut(request):
     messages.add_message(request, messages.SUCCESS, "logg Out successfull!")
     return redirect('signIn')
 
-
+@login_required(login_url='/')
 def profile(request):
-    
-    return render(request, 'hod/profile.html')
+    if request.method == "POST":
+        user=Users.objects.get(id=request.user.id)
+
+       
+    else:
+        return render(request, 'hod/profile.html')
 
 def bussiness(request):
     

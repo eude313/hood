@@ -1,11 +1,11 @@
 {% load static %}
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
-        {% if user.is_authenticated %}
+        {% comment %} {% if user.is_authenticated %} {% endcomment %}
             <a class="navbar-brand font-1" href="{% url 'home' %}">Bazenga hood</a>
-        {% else %}
+        {% comment %} {% else %}
             <a class="navbar-brand font-1" href="{% url 'signIn' %}">Bazenga hood</a>
-        {% endif %}
+        {% endif %} {% endcomment %}
         
         <button 
         class="navbar-toggler"
@@ -19,7 +19,7 @@
         </button>
         <div  class="collapse navbar-collapse"  id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-            {% if user.is_authenticated %}
+            {% comment %} {% if user.is_authenticated %} {% endcomment %}
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 font-2">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
@@ -53,7 +53,7 @@
                     </ul>
                 </li>
             </ul>
-            {% else %}
+            {% comment %} {% else %}
                 <ul class="navbar-nav mb-2 mb-lg-0  font-2">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="{% url 'register' %}">Register /</a>
@@ -62,7 +62,7 @@
                         <a class="nav-link" href=" {% url 'signIn' %} ">signIn</a>
                     </li>
                 </ul>
-            {% endif %}
+            {% endif %} {% endcomment %}
         </div>
     </div>
 </nav>
