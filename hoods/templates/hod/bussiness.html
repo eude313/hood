@@ -101,7 +101,8 @@
   </button>
 </div>
 
-<form class="row fim"  style="font-family: 'Merienda', cursive;" >
+<form class="row fim" method="POST" action="" style="font-family: 'Merienda', cursive;" >
+  {% csrf_token %}
 
   <div class="col">
         <!-- Name input -->
